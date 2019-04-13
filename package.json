@@ -4,7 +4,7 @@
   "description": "App to upload song lyrics",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -w index.js",
+    "dev": "nodemon -w *",
     "build": "next build",
     "start": "NODE_ENV=production node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,5 +24,8 @@
   "homepage": "https://github.com/Obsinqsob01/vlyrics#readme",
   "dependencies": {
     "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "lowdb": "^1.0.0"
   }
 }
