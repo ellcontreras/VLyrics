@@ -26,6 +26,7 @@
     "express": "^4.16.4"
   },
   "devDependencies": {
+    "body-parser": "^1.18.3",
     "lowdb": "^1.0.0"
   }
 }
