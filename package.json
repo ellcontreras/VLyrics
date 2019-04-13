@@ -1,0 +1,25 @@
+{
+  "name": "vlyrics",
+  "version": "1.0.0",
+  "description": "App to upload song lyrics",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Obsinqsob01/vlyrics.git"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "Luis Contreras Guerra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Obsinqsob01/vlyrics/issues"
+  },
+  "homepage": "https://github.com/Obsinqsob01/vlyrics#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
