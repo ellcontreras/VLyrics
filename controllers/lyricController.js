@@ -3,7 +3,10 @@ const db = require("../database");
 module.exports = {
   addLyric: (req, res) => {
     let lyricData = {
-      id: db.get("lyricsId").value(),
+      id: db
+        .get("lyricsId")
+        .value()
+        .toString(),
       songName: req.body.name,
       songLyric: req.body.lyric
     };
@@ -19,7 +22,7 @@ module.exports = {
   getOne: (req, res) => {
     let lyric = db
       .get("lyrics")
-      .find({ id: parseInt(req.params.id) })
+      .find({ id: req.params.id })
       .value();
 
     if (lyric) {
@@ -50,5 +53,10 @@ module.exports = {
       .write();
 
     res.status(200).send("OK");
+  },
+  getAll: (req, res) => {
+    let lyrics = db.get("lyrics").value();
+
+    res.status(200).send(lyrics);
   }
 };

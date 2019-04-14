@@ -10,6 +10,16 @@ const lyricController = require("./controllers/lyricController");
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
+app.get("/lyric", lyricController.getAll);
 app.post("/lyric", lyricController.addLyric);
 app.get("/lyric/:id", lyricController.getOne);
 app.put("/lyric/:id", lyricController.updateOne);
