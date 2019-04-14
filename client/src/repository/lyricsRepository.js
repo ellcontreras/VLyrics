@@ -16,5 +16,8 @@ export default {
   },
   deleteLyric(lyric) {
     return Repository.delete(`${resource}/${lyric.id}`);
+  },
+  search(query) {
+    return Repository.get(`${resource}/search/${query}`);
   }
 };
