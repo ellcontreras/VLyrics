@@ -2,7 +2,9 @@ import {
   ADD_LYRIC,
   ADD_LYRIC_SUCCESS,
   ALL_LYRICS,
-  ALL_LYRICS_SUCCESS
+  ALL_LYRICS_SUCCESS,
+  DELETE_LYRIC,
+  DELETE_LYRIC_SUCCESS
 } from "./mutation-types";
 import router from "../router";
 
@@ -24,5 +26,16 @@ export const lyricMutations = {
     state.showLoading = false;
 
     state.lyrics = payload;
+  },
+  [DELETE_LYRIC]: state => {
+    state.showLoading = true;
+  },
+  [DELETE_LYRIC_SUCCESS]: (state, payload) => {
+    state.showLoading = false;
+
+    const index = state.lyrics.findIndex(c => c.id === payload);
+    state.lyrics.splice(index, 1);
+
+    router.push("/");
   }
 };
