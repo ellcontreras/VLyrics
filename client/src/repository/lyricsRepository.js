@@ -14,8 +14,8 @@ export default {
   updateLyric(lyric) {
     return Repository.put(`${resource}/${lyric.id}`, lyric);
   },
-  deleteLyric(lyric) {
-    return Repository.delete(`${resource}/${lyric.id}`);
+  deleteLyric(lyricId) {
+    return Repository.delete(`${resource}/${lyricId}`);
   },
   search(query) {
     return Repository.get(`${resource}/search/${query}`);
