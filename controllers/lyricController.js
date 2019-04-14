@@ -49,7 +49,7 @@ module.exports = {
   },
   removeOne: (req, res) => {
     db.get("lyrics")
-      .remove({ id: parseInt(req.params.id) })
+      .remove({ id: req.params.id })
       .write();
 
     res.status(200).send("OK");
