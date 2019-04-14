@@ -24,5 +24,6 @@ app.post("/lyric", lyricController.addLyric);
 app.get("/lyric/:id", lyricController.getOne);
 app.put("/lyric/:id", lyricController.updateOne);
 app.delete("/lyric/:id", lyricController.removeOne);
+app.get("/lyric/search/:query", lyricController.search);
 
 app.listen(PORT, () => console.log(`server running on :${PORT}`));

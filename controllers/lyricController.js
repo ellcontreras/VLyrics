@@ -58,5 +58,20 @@ module.exports = {
     let lyrics = db.get("lyrics").value();
 
     res.status(200).send(lyrics);
+  },
+  search: (req, res) => {
+    let lyrics = db.get("lyrics").value();
+
+    let { query } = req.params;
+
+    query = query.toLowerCase();
+
+    function condition(e) {
+      return e.songName.toLowerCase().includes(query);
+    }
+
+    let lyricWithQuery = lyrics.filter(condition);
+
+    res.status(200).send(lyricWithQuery);
   }
 };
